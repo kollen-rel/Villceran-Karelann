@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karel Ann C. Villaceran | IT Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Light Purple Theme */
+            --primary: #8b5cf6;    
+            --secondary: #6d28d9;  
+            --bg-main: #f5f3ff;    
+            --bg-deep: #ede9fe;    
+            --card-bg: #ffffff;    
+            --text-main: #1e1b4b;  
+            --text-dim: #6d6a7c;   
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.8; 
+            margin: 0;
+            background-color: var(--bg-deep);
+            color: var(--text-main);
+            overflow-x: hidden;
+        }
+
+        /* --- Header --- */
+        header {
+            height: 60vh; 
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: radial-gradient(circle at center, var(--bg-main), var(--bg-deep));
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        header h1 {
+            font-size: clamp(2.8rem, 10vw, 4.5rem);
+            margin: 0 0 15px 0; 
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -2px;
+        }
+
+        header p {
+            color: var(--text-dim);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-weight: 400;
+        }
+
+        /* --- Navigation --- */
+        nav {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            text-align: center;
+            padding: 20px 10px; 
+            z-index: 1000;
+            border-bottom: 1px solid rgba(139, 92, 246, 0.1);
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap; 
+            gap: 10px 20px; 
+        }
+
+        nav a {
+            color: var(--text-dim);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: 0.3s;
+        }
+
+        nav a:hover { color: var(--primary); }
+
+        /* --- Content Sections --- */
+        section {
+            /* ADJUSTED: Reduced padding from 100px to 40px for tighter spacing */
+            padding: 40px 24px; 
+            max-width: 900px;
+            margin: auto;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: var(--secondary);
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 25px; /* ADJUSTED: Slightly reduced margin below titles */
+        }
+
+        h2::after {
+            content: "";
+            height: 1px;
+            flex-grow: 1;
+            background: linear-gradient(to right, var(--primary), transparent);
+        }
+
+        .card {
+            background: var(--card-bg);
+            padding: 40px; 
+            border-radius: 20px; 
+            border: 1px solid rgba(139, 92, 246, 0.1);
+            box-sizing: border-box;
+            box-shadow: 0 15px 30px -10px rgba(109, 40, 217, 0.1);
+        }
+
+        .info-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .info-list li {
+            margin-bottom: 15px; 
+            font-size: 1.15rem;
+        }
+
+        .info-list strong {
+            color: var(--secondary);
+            margin-right: 12px;
+        }
+
+        /* --- Skills --- */
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .skill-tag {
+            background: rgba(139, 92, 246, 0.08);
+            color: var(--secondary);
+            padding: 10px 22px;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            border: 1px solid rgba(139, 92, 246, 0.15);
+        }
+
+        /* --- Project List --- */
+        .project-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background: var(--card-bg);
+            padding: 35px;
+            border-radius: 20px;
+            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid rgba(139, 92, 246, 0.1);
+            box-shadow: 0 10px 20px -5px rgba(109, 40, 217, 0.05);
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            border: 1px solid var(--primary);
+            box-shadow: 0 25px 40px -12px rgba(109, 40, 217, 0.15);
+        }
+
+        .link {
+            color: var(--secondary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.2s;
+        }
+
+        .link:hover { text-decoration: underline; }
+
+        footer {
+            text-align: center;
+            padding: 60px 20px;
+            font-size: 0.9rem;
+            color: var(--text-dim);
+            border-top: 1px solid rgba(139, 92, 246, 0.1);
+            margin-top: 20px; /* ADJUSTED: Reduced margin */
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>PORTFOLIO</h1>
+        <p>Karel Ann</p>
+    </header>
+
+    <nav>
+        <a href="#about">About</a>
+        <a href="#objective">Objective</a>
+        <a href="#skills">Skills</a>
+        <a href="#project">Project</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <div class="card">
+            <ul class="info-list">
+                <li><strong>Name:</strong> Karel Ann C. Villaceran</li>
+                <li><strong>Course:</strong> Bachelor of Science in Information Technology</li>
+                <li><strong>Year:</strong> 3rd Year</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="objective">
+        <h2>Career Objective</h2>
+        <div class="card">
+            <p>
+                To build a successful career by continuously learning, improving my abilities, and gaining experience that will help me become a competent and responsible professional in my chosen field.
+            </p>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2>Skills</h2>
+        <div class="skills-grid">
+            <span class="skill-tag">HTML5 Basic</span>
+            <span class="skill-tag">CSS Styling</span>
+        </div>
+    </section>
+
+    <section id="project">
+        <h2>Project</h2>
+        <div class="project-list">
+            <div class="project-card">
+                <p>To create  a simple application that using basic web technologies while  continuously learning.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <div class="card">
+            <p> <strong>Email:</strong> <a href="mailto:karelann08@gmail.com" class="link">karelann08@gmail.com</a></p>
+            <p> <strong>GitHub:</strong> <a href="https://github.com/kollen-rel" target="_blank" class="link">github.com/kollen-rel</a></p>
+            <p> <strong>Phone:</strong> <span style="color: var(--text-dim);">09668253131</span></p>
+         </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Karel Ann C. Villaceran. Designed for GitHub Pages.</p>
+    </footer>
+
+</body>
+</html>
